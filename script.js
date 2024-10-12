@@ -168,3 +168,23 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 // const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 // Gets primaryGenre and secondaryGenre individually and another array with the rest of genres
 // console.log(primaryGenre, secondaryGenre, otherGenres);
+
+//#Spread
+// Create a new array with all the values and at the end add a new item
+const newGenres = [...genres, "Epic fantasy"];
+console.log(newGenres);
+
+// Create a new onject, add a new property (moviePublicationDate) and update pages
+const updatedBook = {
+  ...book,
+  moviePublicationDate: "2001-12-19",
+  pages: 1210,
+};
+console.log(updatedBook);
+
+// This won't update the pages, because pages will be overwritten by the ...books elements
+// const updatedBook = {
+//   pages: 1210,
+//   ...book,
+//   moviePublicationDate: "2001-12-19",
+// };
