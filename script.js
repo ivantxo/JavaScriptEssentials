@@ -147,7 +147,7 @@ function getBook(id) {
 // books;
 
 //## Destructuring
-const book = getBook(2);
+const book = getBook(1);
 
 // const title = book.title;
 // const author = book.author;
@@ -162,3 +162,9 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 // with destructuring
 // const [primaryGenre, secondaryGenre] = genres;
 // console.log(primaryGenre, secondaryGenre);
+
+//## Rest/Spread operator
+//# Rest
+// const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+// Gets primaryGenre and secondaryGenre individually and another array with the rest of genres
+// console.log(primaryGenre, secondaryGenre, otherGenres);
