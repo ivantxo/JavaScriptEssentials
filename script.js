@@ -155,7 +155,7 @@ const book = getBook(1);
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
 
-// console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
+console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
@@ -165,9 +165,26 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 
 //## Rest/Spread operator
 //# Rest
-// const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 // Gets primaryGenre and secondaryGenre individually and another array with the rest of genres
-// console.log(primaryGenre, secondaryGenre, otherGenres);
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+// Allows a function to accept an indefinite number of arguments as an array
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+console.log(sum(1, 2, 3));
+
+function myFun(a, b, ...manyArgs) {
+  console.log("a", a);
+  console.log("b", b);
+  console.log("manyArgs", manyArgs);
+}
+myFun("one", "two", "three", "four", "five");
 
 //#Spread
 // Create a new array with all the values and at the end add a new item
