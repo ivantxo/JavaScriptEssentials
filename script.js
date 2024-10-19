@@ -163,6 +163,66 @@ console.log(title, author, pages, publicationDate, genres, hasMovieAdaptation);
 // const [primaryGenre, secondaryGenre] = genres;
 // console.log(primaryGenre, secondaryGenre);
 
+// a) Assigning to new variable names
+const o = { p: 42, q: true };
+const { p: foo, q: bar } = o;
+console.log(foo);
+console.log(bar);
+
+// b) Assigning to new variable names
+const { a: aa = 10, b: bb = 5 } = { a: 3 };
+console.log(aa);
+console.log(bb);
+
+// Unpacking properties from objects passed as a function parameter
+const user = {
+  id: 42,
+  displayName: "santi",
+  fullName: {
+    firstName: "Santiago",
+    lastName: "Ramirez",
+  },
+};
+
+function userId({ id }) {
+  console.log("The id is: " + id);
+}
+userId(user);
+
+function displayName({ displayName: dname }) {
+  console.log(`Display Name is: ${dname}`);
+}
+displayName(user);
+
+function whois({ displayName, fullName: { firstName: name } }) {
+  console.log(`${displayName} is ${name}`);
+}
+whois(user);
+
+// Default values
+function drawChart({
+  size = "big",
+  coords = { x: 0, y: 0 },
+  radius = 25,
+} = {}) {
+  console.log(size, coords, radius);
+  // do some chart drawing
+}
+
+drawChart({
+  coords: { x: 18, y: 30 },
+  radius: 30,
+});
+
+// Combined array and object destructuring
+const props = [
+  { id: 1, name: "Fizz" },
+  { id: 2, name: "Buzz" },
+  { id: 3, name: "FizzBuzz" },
+];
+const [, , { name }] = props;
+console.log(name);
+
 //## Rest/Spread operator
 //# Rest
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
